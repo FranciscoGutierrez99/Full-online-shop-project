@@ -1,0 +1,10 @@
+<article class="cart-item">
+  <div class="cart-item-info">
+    <h2><%= cartItem.product.title%></h2>
+    <p>$<span class="cart-item-total-price"><%= cartItem.totalPrice%></span> <span class="cart-product-price">($<%= cartItem.product.price%>)</span></p>
+  </div>
+  <div class="cart-item-managment">
+    <input type="number" class="input-update-element" name="quantity" value="<%=cartItem.quantity%>" required>
+    <button class="btn btn-alt" data-productid="<%= cartItem.product.id%>" >Update</button>
+  </div>
+</article>

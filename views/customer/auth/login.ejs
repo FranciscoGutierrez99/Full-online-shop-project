@@ -1,0 +1,26 @@
+<%- include('../../shared/includes/head', {pageTitle: 'Signup'})%>
+  <link rel="stylesheet" href="/styles/forms.css">
+  <link rel="stylesheet" href="/styles/auth.css">
+</head>
+<body>
+  <%- include('../../shared/includes/header') %>
+  <main>
+    <h1>Log in</h1>
+    <% if (userData.hasError) { %>
+      <section class="alert">
+        <h2>Invalid input</h2> 
+        <p><%=userData.message%></p>
+      </section>
+    <% } %>
+    <form action="/login" method="post">
+      <p>
+        <label for="email">Introduce tu email:</label>
+        <input type="email" name="email" id="email" required> 
+      </p>
+      <p>
+        <label for="password">Introduce una constrasena:</label>
+        <input type="password" name="password" id="password" minlength="6" required>
+      </p>
+      <button class="btn">Log in</button>
+  </main>
+<%- include('../../shared/includes/footer') %>

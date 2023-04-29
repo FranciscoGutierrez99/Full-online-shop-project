@@ -1,0 +1,49 @@
+<%- include('../../shared/includes/head', {pageTitle: 'Signup'})%>
+  <link rel="stylesheet" href="/styles/forms.css">
+  <link rel="stylesheet" href="/styles/auth.css">
+</head>
+<body>
+  <%- include('../../shared/includes/header') %>
+  <main>
+    <h1>Create New Account</h1>
+    <% if (userData.hasError) { %>
+      <section class="alert">
+        <h2>Invalid credentials</h2> 
+        <p><%=userData.message%></p>
+      </section>
+    <% } %>
+    <form action="/signup" method="post">
+      <p>
+        <label for="email">Introduce tu email:</label>
+        <input type="email" name="email" id="email" value="<%=userData.email%>" required> 
+      </p>
+      <p>
+        <label for="confirm-email">Confirma tu email:</label>
+        <input type="email" name="confirm-email" id="confirm-email" value="<%=userData['confirm-email']%>" required> 
+      </p>
+      <p>
+        <label for="password">Introduce una constrasena:</label>
+        <input type="password" name="password" id="password" minlength="6" required>
+      </p>
+      <hr>
+      <p>
+        <label for="username">Introduce tu nombre:</label>
+        <input type="text" name="username" id="username" value="<%=userData.username%>">
+      </p>
+      <p>
+        <label for="street">Direccion:</label>
+        <input type="text" name="street" id="street" value="<%=userData.street%>"  required> 
+      </p>
+      <p>
+        <label for="postalCode">Codigo Postal:</label>
+        <input type="text" name="postalCode" id="postal" minlength="5" maxlength="5" value="<%=userData.postalCode%>" required>
+      </p>
+      <p>
+        <label for="city">Ciudad:</label>
+        <input type="text" name="city" id="city" value="<%=userData.city%>" required > 
+      </p>
+      <button class="btn">Create Account</button>
+      <p id="switch-form" ><a href="/login">Login instead</a></p>
+    </form>
+  </main>
+<%- include('../../shared/includes/footer') %>
