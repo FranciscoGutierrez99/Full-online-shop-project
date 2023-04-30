@@ -37,7 +37,7 @@
 ### Add Product Page
 ![image](https://user-images.githubusercontent.com/112670452/235280990-5300b507-20f5-46d0-a880-4f0feddc83fe.png)
 
-### Magane Orders Page 
+### Manage Orders Page 
 ![image](https://user-images.githubusercontent.com/112670452/235281106-39096a1b-67cc-448e-8c00-310e31450dd8.png)
 
 ### Login Page
